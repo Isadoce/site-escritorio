@@ -1,33 +1,16 @@
-/* =====================================================
-   FLÁVIA ORTÍZ ADVOCACIA
-   IDENTIDADE VISUAL
-   ===================================================== */
-
 :root {
+    --navy: #06365d;
+    --navy-dark: #032947;
+    --gold: #c9a45c;
+    --gold-light: #e2c98d;
+    --white: #ffffff;
+    --off-white: #f7f7f5;
+    --text: #25313b;
+    --gray: #70777d;
 
-    --azul: #0b1a38;
-    --azul-2: #101f40;
-    --azul-3: #071329;
-
-    --vinho: #641f27;
-    --vinho-claro: #7b292f;
-
-    --dourado: #d8c18a;
-    --dourado-claro: #eee2b6;
-
-    --bege: #eee9dd;
-    --bege-2: #d8cdbd;
-
-    --branco: #ffffff;
-
-    --texto: #101c34;
-
+    --title-font: "Cormorant Garamond", serif;
+    --body-font: "Montserrat", sans-serif;
 }
-
-
-/* =====================================================
-   RESET
-   ===================================================== */
 
 * {
     margin: 0;
@@ -40,13 +23,15 @@ html {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-
-    background: var(--azul);
-
-    color: var(--texto);
-
+    font-family: var(--body-font);
+    color: var(--text);
+    background: var(--white);
     overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 a {
@@ -54,1246 +39,643 @@ a {
     color: inherit;
 }
 
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
 
-/* =====================================================
-   CABEÇALHO
-   ===================================================== */
 
-.topo {
+/* =========================
+   HEADER
+========================= */
 
+.header {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
+    z-index: 1000;
+    background: rgba(3, 41, 71, 0.97);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.35);
+}
 
-    height: 72px;
-
+.nav-container {
+    height: 88px;
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    padding: 0 24px;
-
-    background: rgba(8, 23, 49, 0.97);
-
-    border-bottom: 1px solid rgba(216, 193, 138, 0.25);
-
-    z-index: 9999;
-
 }
 
-
-/* MARCA */
-
-.marca {
-
-    color: var(--branco);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 29px;
-
-    font-weight: 500;
-
-    letter-spacing: -1px;
-
-    white-space: nowrap;
-
-}
-
-.marca span {
-
-    display: inline;
-
-    margin-left: 10px;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: var(--dourado);
-
-}
-
-
-/* MENU */
-
-nav {
-
+.logo {
+    color: white;
     display: flex;
-
-    gap: 38px;
-
-    align-items: center;
-
-}
-
-nav a {
-
-    color: var(--branco);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 18px;
-
-    position: relative;
-
-    transition: .3s;
-
-}
-
-nav a:hover {
-
-    color: var(--dourado);
-
-}
-
-nav a::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: -7px;
-
-    width: 0;
-
-    height: 1px;
-
-    background: var(--dourado);
-
-    transition: .3s;
-
-}
-
-nav a:hover::after {
-
-    width: 100%;
-
-}
-
-
-/* =====================================================
-   MENU MOBILE
-   ===================================================== */
-
-.menu-mobile {
-
-    display: none;
-
-    background: transparent;
-
-    border: none;
-
-    color: var(--dourado);
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-}
-
-
-/* =====================================================
-   PÁGINA INICIAL
-   ===================================================== */
-
-.inicio {
-
-    position: relative;
-
-    min-height: 655px;
-
-    padding-top: 72px;
-
-    display: flex;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 70% 45%,
-            rgba(255,255,255,.98) 0%,
-            rgba(232,230,225,.95) 27%,
-            rgba(218,216,210,.9) 47%,
-            rgba(194,193,190,.55) 70%,
-            rgba(160,160,160,.25) 100%
-        );
-
-}
-
-
-/*
-    Representação abstrata da imagem de Justiça.
-    O espaço foi propositalmente mantido claro para
-    preservar o efeito da arte do Canva.
-*/
-
-.estatua {
-
-    position: absolute;
-
-    right: -8%;
-
-    top: 72px;
-
-    width: 75%;
-
-    height: calc(100% - 72px);
-
-    opacity: .9;
-
-    background:
-
-        radial-gradient(
-            ellipse at 55% 38%,
-            rgba(255,255,255,.95) 0 12%,
-            transparent 13%
-        ),
-
-        radial-gradient(
-            ellipse at 65% 45%,
-            rgba(210,210,207,.9) 0 18%,
-            transparent 19%
-        ),
-
-        linear-gradient(
-            120deg,
-            transparent 20%,
-            rgba(255,255,255,.85) 20% 36%,
-            transparent 37% 49%,
-            rgba(230,228,221,.85) 50% 72%,
-            transparent 73%
-        );
-
-    filter: blur(.5px);
-
-}
-
-
-/* TEXTO DA HOME */
-
-.inicio-conteudo {
-
-    position: relative;
-
-    z-index: 3;
-
-    width: 470px;
-
-    margin-left: 48px;
-
-}
-
-.inicio h1 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 52px;
-
-    font-weight: 400;
-
-    line-height: .98;
-
-    color: var(--azul);
-
-    margin-bottom: 25px;
-
-}
-
-.inicio p {
-
-    font-size: 21px;
-
-    line-height: 1.55;
-
-    color: var(--azul);
-
-    margin-bottom: 25px;
-
-}
-
-
-/* BOTÃO */
-
-.botao {
-
-    display: inline-block;
-
-    padding: 17px 27px;
-
-    background: var(--azul);
-
-    color: var(--dourado);
-
-    font-size: 16px;
-
-    transition: .3s;
-
-}
-
-.botao:hover {
-
-    background: var(--vinho);
-
-    transform: translateY(-2px);
-
-}
-
-
-/* =====================================================
-   AVALIAÇÕES
-   ===================================================== */
-
-.avaliacoes {
-
-    background: var(--azul);
-
-    padding: 0 40px 45px;
-
-}
-
-.avaliacoes h2 {
-
-    color: var(--dourado);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 43px;
-
-    font-weight: 500;
-
-    text-align: center;
-
-    margin-bottom: 18px;
-
-}
-
-.avaliacoes-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 70px;
-
-}
-
-.avaliacao {
-
-    height: 165px;
-
-    background: #b9a994;
-
-    padding: 25px;
-
-    color: var(--azul);
-
-    display: flex;
-
     flex-direction: column;
-
-    justify-content: center;
-
-    text-align: center;
-
+    line-height: 1;
 }
 
-.avaliacao span {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 45px;
-
-    color: var(--azul);
-
+.logo span {
+    font-family: var(--title-font);
+    font-size: 28px;
+    letter-spacing: 2px;
 }
 
-.avaliacao p {
-
-    font-size: 13px;
-
+.logo small {
+    color: var(--gold-light);
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 7px;
 }
 
-
-/* =====================================================
-   SOBRE A ADVOGADA
-   ===================================================== */
-
-.sobre {
-
-    min-height: 800px;
-
-    display: grid;
-
-    grid-template-columns: 42% 58%;
-
-    background: var(--bege);
-
+.nav {
+    display: flex;
+    gap: 32px;
 }
 
-
-/* BLOCO ESQUERDO */
-
-.sobre-imagem {
-
+.nav a {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
-
-    margin: 40px 0 40px 130px;
-
-    background: white;
-
-    min-height: 700px;
-
-    box-shadow: 78px 35px 0 var(--vinho);
-
+    padding: 8px 0;
 }
 
-.nome-vertical {
-
+.nav a::after {
+    content: "";
     position: absolute;
-
-    left: 25px;
-
-    bottom: 55px;
-
-    color: var(--vinho);
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: 75px;
-
-    writing-mode: vertical-rl;
-
-    transform: rotate(180deg);
-
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: 0.3s;
 }
 
-
-/* TEXTO */
-
-.sobre-texto {
-
-    padding: 55px 70px 70px 55px;
-
+.nav a:hover::after {
+    width: 100%;
 }
 
-.sobre-texto h2 {
-
-    color: var(--vinho);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 48px;
-
-    font-weight: 500;
-
-    line-height: 1;
-
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.sobre-texto h3 {
-
-    color: var(--vinho);
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: 52px;
-
-    font-weight: 400;
-
-    line-height: 1;
-
-    margin-bottom: 30px;
-
-}
-
-.linha-dourada {
-
-    width: 90px;
-
+.menu-toggle span {
+    display: block;
+    width: 27px;
     height: 2px;
-
-    background: var(--dourado);
-
-    margin-bottom: 25px;
-
+    background: white;
+    margin: 6px;
 }
 
-.sobre-texto h4 {
 
-    font-size: 25px;
+/* =========================
+   HERO
+========================= */
 
-    color: var(--azul);
-
-    margin-bottom: 10px;
-
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--navy-dark);
+    overflow: hidden;
 }
 
-.sobre-texto p {
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("justica.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
-    color: var(--azul);
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 41, 71, 0.96) 0%,
+            rgba(3, 41, 71, 0.80) 38%,
+            rgba(3, 41, 71, 0.20) 75%,
+            rgba(3, 41, 71, 0.05) 100%
+        );
+}
 
-    font-size: 17px;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+}
 
-    line-height: 1.5;
+.hero-text {
+    max-width: 620px;
+    color: white;
+}
 
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
     font-weight: 600;
+    margin-bottom: 22px;
+}
 
-    margin-bottom: 9px;
+.hero h1 {
+    font-family: var(--title-font);
+    font-size: clamp(60px, 7vw, 100px);
+    line-height: 0.9;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
 
+.hero h1 span {
+    display: block;
+    color: var(--gold-light);
+}
+
+.hero-description {
+    max-width: 520px;
+    line-height: 1.9;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 35px;
 }
 
 
-/* =====================================================
-   ÁREAS DE ATUAÇÃO
-   ===================================================== */
+/* =========================
+   BOTÕES
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 16px 30px;
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.section-heading h2,
+.about-text h2,
+.contact-text h2 {
+    font-family: var(--title-font);
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 0.95;
+    color: var(--navy-dark);
+}
+
+.section-heading h2 span,
+.about-text h2 span,
+.contact-text h2 span {
+    color: var(--gold);
+}
+
+.section-heading > p:last-child {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-top: 22px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 2px;
+    background: var(--gold);
+    margin: 28px 0;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.about {
+    background: var(--off-white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border: 1px solid var(--gold);
+    left: -20px;
+    bottom: -20px;
+    z-index: 0;
+}
+
+.about-image img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    padding-left: 20px;
+}
+
+.about-text p:not(.section-label) {
+    color: var(--gray);
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    color: var(--navy);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   ÁREAS
+========================= */
 
 .areas {
-
-    position: relative;
-
-    min-height: 850px;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 50%,
-            #16284f 0%,
-            var(--azul) 48%,
-            #071329 100%
-        );
-
-    overflow: hidden;
-
+    background: white;
 }
 
-
-/* CÍRCULO CENTRAL */
-
-.circulo-central {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 570px;
-
-    height: 570px;
-
-    border-radius: 50%;
-
-    background: var(--azul-2);
-
-    box-shadow:
-
-        0 0 70px rgba(0,0,0,.45),
-
-        inset 0 0 60px rgba(25,42,80,.7);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    z-index: 2;
-
-}
-
-.simbolo-justica {
-
-    color: var(--dourado);
-
-    font-size: 130px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    line-height: 1;
-
-    text-shadow: 0 0 15px rgba(216,193,138,.4);
-
-}
-
-.circulo-central h2 {
-
-    color: var(--dourado);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 45px;
-
-    font-weight: 400;
-
-    margin-top: 10px;
-
-}
-
-
-/* =====================================================
-   ÁREAS INDIVIDUAIS
-   ===================================================== */
-
-.area {
-
-    position: absolute;
-
-    z-index: 5;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    color: var(--dourado);
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: 56px;
-
-    transition: .4s;
-
-}
-
-.area:hover {
-
-    color: var(--dourado-claro);
-
-    transform: scale(1.07);
-
-}
-
-
-/* BOLAS */
-
-.bola {
-
-    width: 125px;
-
-    height: 125px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle at 35% 30%,
-            #fff8d6,
-            #e8d99e 38%,
-            #c6b16d 65%,
-            #f6e8b0 100%
-        );
-
-    border: 6px solid var(--azul);
-
-    box-shadow:
-
-        0 0 0 1px var(--dourado),
-
-        0 0 35px rgba(216,193,138,.3);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-.bola span {
-
-    display: none;
-
-}
-
-
-/* POSIÇÕES */
-
-.area-civil {
-
-    top: 150px;
-
-    left: 5%;
-
-}
-
-.area-criminal {
-
-    top: 430px;
-
-    left: 1%;
-
-}
-
-.area-trabalhista {
-
-    bottom: 70px;
-
-    left: 10%;
-
-}
-
-.area-empresarial {
-
-    bottom: 60px;
-
-    right: 13%;
-
-}
-
-.area-previdenciario {
-
-    top: 430px;
-
-    right: 0;
-
-}
-
-
-/* =====================================================
-   DETALHES
-   ===================================================== */
-
-.detalhes {
-
-    background: var(--bege);
-
-}
-
-.detalhes article {
-
-    min-height: 300px;
-
+.areas-grid {
     display: grid;
-
-    grid-template-columns: 150px 1fr;
-
-    gap: 40px;
-
-    align-items: center;
-
-    padding: 70px 12%;
-
-    border-bottom: 1px solid rgba(11,26,56,.15);
-
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #ddd;
 }
 
-.detalhes article > span {
-
-    color: var(--vinho);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 70px;
-
+.area-card {
+    background: white;
+    min-height: 300px;
+    padding: 42px;
+    position: relative;
+    transition: 0.3s;
 }
 
-.detalhes h2 {
+.area-card:hover {
+    background: var(--navy);
+    color: white;
+}
 
-    color: var(--azul);
+.area-number {
+    color: var(--gold);
+    font-family: var(--title-font);
+    font-size: 27px;
+    margin-bottom: 35px;
+}
 
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 50px;
-
+.area-card h3 {
+    font-family: var(--title-font);
+    font-size: 31px;
     font-weight: 500;
-
-}
-
-.detalhes p {
-
-    max-width: 700px;
-
-    color: var(--azul);
-
-    font-size: 17px;
-
-    line-height: 1.6;
-
-}
-
-
-/* =====================================================
-   CONTATO
-   ===================================================== */
-
-.contato {
-
-    min-height: 400px;
-
-    padding: 70px 10%;
-
-    background: var(--azul);
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 40px;
-
-}
-
-.contato .pequeno {
-
-    color: var(--dourado);
-
-    letter-spacing: 4px;
-
-    font-size: 12px;
-
     margin-bottom: 15px;
-
 }
 
-.contato h2 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 65px;
-
-    line-height: .95;
-
-    font-weight: 400;
-
-    color: white;
-
-}
-
-.contato > div > p:last-child {
-
-    margin-top: 20px;
-
-    color: #c9cbd2;
-
-}
-
-
-/* =====================================================
-   RODAPÉ
-   ===================================================== */
-
-footer {
-
-    background: #071329;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 45px 20px;
-
-}
-
-.footer-marca {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
-
-    color: white;
-
-}
-
-.footer-marca span {
-
-    display: block;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: var(--dourado);
-
-}
-
-footer p {
-
-    margin: 15px 0;
-
-    color: #b9bec9;
-
+.area-card p {
+    color: var(--gray);
     font-size: 13px;
-
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
-footer small {
+.area-card:hover p {
+    color: rgba(255,255,255,0.75);
+}
 
-    color: #777f91;
-
+.area-card a {
+    color: var(--gold);
     font-size: 11px;
-
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 
-/* =====================================================
+/* =========================
+   FRASE
+========================= */
+
+.quote-section {
+    min-height: 530px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url("balanca.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.quote-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 41, 71, 0.94);
+}
+
+.quote-content {
+    position: relative;
+    color: white;
+    max-width: 850px;
+    text-align: center;
+}
+
+.quote-mark {
+    color: var(--gold);
+    font-family: var(--title-font);
+    font-size: 100px;
+    line-height: 0.4;
+}
+
+.quote-content h2 {
+    font-family: var(--title-font);
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.quote-content h2 span {
+    color: var(--gold-light);
+}
+
+
+/* =========================
+   DIFERENCIAIS
+========================= */
+
+.differentials {
+    background: var(--off-white);
+}
+
+.differential-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.differential {
+    border-top: 1px solid var(--gold);
+    padding-top: 25px;
+}
+
+.differential .icon {
+    color: var(--gold);
+    font-family: var(--title-font);
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.differential h3 {
+    font-family: var(--title-font);
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--navy-dark);
+    margin-bottom: 14px;
+}
+
+.differential p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contact {
+    background: var(--navy-dark);
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contact-text h2 {
+    color: white;
+}
+
+.contact-text > p:not(.section-label) {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.contact-image {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-image img {
+    max-height: 430px;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #021f36;
+    color: white;
+    padding: 45px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo strong {
+    font-family: var(--title-font);
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--gold);
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-content > p {
+    color: rgba(255,255,255,0.45);
+    font-size: 9px;
+}
+
+
+/* =========================
    RESPONSIVO
-   ===================================================== */
+========================= */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
-    .topo {
-
-        height: 65px;
-
-    }
-
-    .marca {
-
-        font-size: 23px;
-
-    }
-
-    .marca span {
-
-        display: none;
-
-    }
-
-    .menu-mobile {
-
-        display: block;
-
-    }
-
-    nav {
-
+    .nav {
         position: absolute;
-
-        top: 65px;
-
+        top: 88px;
         left: 0;
-
         width: 100%;
-
-        background: var(--azul);
-
-        display: none;
-
+        background: var(--navy-dark);
         flex-direction: column;
-
         gap: 0;
-
+        padding: 20px 5%;
+        display: none;
     }
 
-    nav.aberto {
-
+    .nav.active {
         display: flex;
-
     }
 
-    nav a {
-
-        width: 100%;
-
-        padding: 18px;
-
-        text-align: center;
-
-        border-bottom: 1px solid rgba(255,255,255,.1);
-
+    .nav a {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-
-    .inicio {
-
-        min-height: 700px;
-
+    .menu-toggle {
+        display: block;
     }
 
-    .inicio-conteudo {
-
-        margin-left: 25px;
-
-        width: 420px;
-
-    }
-
-    .inicio h1 {
-
-        font-size: 45px;
-
-    }
-
-
-    .sobre {
-
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
-
     }
 
-    .sobre-imagem {
-
-        margin: 40px auto;
-
-        width: 70%;
-
-    }
-
-
-    .sobre-texto {
-
-        padding: 40px 10% 70px;
-
-    }
-
-
-    .avaliacoes-grid {
-
+    .areas-grid {
         grid-template-columns: repeat(2, 1fr);
-
     }
 
-
-    .circulo-central {
-
-        width: 430px;
-
-        height: 430px;
-
+    .differential-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .circulo-central h2 {
-
-        font-size: 35px;
-
+    .about-text {
+        padding-left: 0;
     }
 
-    .simbolo-justica {
-
-        font-size: 90px;
-
+    .contact-image {
+        order: -1;
     }
-
-    .area {
-
-        font-size: 40px;
-
-    }
-
-    .bola {
-
-        width: 90px;
-
-        height: 90px;
-
-    }
-
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
-    .inicio {
-
-        min-height: 650px;
-
+    .nav-container {
+        height: 75px;
     }
 
-    .inicio-conteudo {
-
-        width: 80%;
-
-        margin-left: 25px;
-
+    .logo span {
+        font-size: 22px;
     }
 
-    .inicio h1 {
-
-        font-size: 42px;
-
+    .hero {
+        min-height: 760px;
     }
 
-    .inicio p {
-
-        font-size: 17px;
-
+    .hero-content {
+        padding-top: 100px;
     }
 
-
-    .avaliacoes {
-
-        padding: 0 20px 35px;
-
+    .hero h1 {
+        font-size: 62px;
     }
 
-    .avaliacoes h2 {
-
-        font-size: 34px;
-
+    .section {
+        padding: 80px 0;
     }
 
-    .avaliacoes-grid {
+    .about-image img {
+        height: 400px;
+    }
 
+    .areas-grid {
         grid-template-columns: 1fr;
-
-        gap: 15px;
-
     }
 
+    .differential-grid {
+        grid-template-columns: 1fr;
+    }
 
-    .sobre-imagem {
+    .area-card {
+        min-height: auto;
+    }
 
-        width: 70%;
-
+    .quote-section {
         min-height: 450px;
-
     }
 
-    .sobre-texto h2 {
-
-        font-size: 38px;
-
-    }
-
-    .sobre-texto h3 {
-
-        font-size: 43px;
-
-    }
-
-
-    .areas {
-
-        min-height: 850px;
-
-    }
-
-    .circulo-central {
-
-        width: 320px;
-
-        height: 320px;
-
-    }
-
-    .simbolo-justica {
-
-        font-size: 65px;
-
-    }
-
-    .circulo-central h2 {
-
-        font-size: 28px;
-
-        text-align: center;
-
-    }
-
-    .area {
-
-        font-size: 34px;
-
-    }
-
-    .bola {
-
-        width: 62px;
-
-        height: 62px;
-
-    }
-
-    .area-civil {
-
-        top: 120px;
-
-        left: 5px;
-
-    }
-
-    .area-criminal {
-
-        top: 330px;
-
-        left: 0;
-
-    }
-
-    .area-trabalhista {
-
-        bottom: 80px;
-
-        left: 5px;
-
-    }
-
-    .area-empresarial {
-
-        bottom: 75px;
-
-        right: 5px;
-
-    }
-
-    .area-previdenciario {
-
-        top: 330px;
-
-        right: 0;
-
-    }
-
-
-    .detalhes article {
-
-        grid-template-columns: 1fr;
-
-        gap: 10px;
-
-        padding: 50px 8%;
-
-    }
-
-    .detalhes article > span {
-
-        font-size: 45px;
-
-    }
-
-    .detalhes h2 {
-
-        font-size: 42px;
-
-    }
-
-
-    .contato {
-
+    .footer-content {
         flex-direction: column;
-
-        align-items: flex-start;
-
+        text-align: center;
     }
 
-    .contato h2 {
-
-        font-size: 48px;
-
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
 }
