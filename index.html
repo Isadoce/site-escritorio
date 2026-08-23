@@ -1,104 +1,274 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-    <title>Escritório de Advocacia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flávia Ortíz Advocacia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"></head>
+</head>
 
 <body>
 
-    <header>
+    <!-- MENU -->
+    <header class="header">
+        <a href="#inicio" class="logo">
+            Flávia Ortíz
+            <span>ADVOCACIA</span>
+        </a>
 
-    <h2>Nome do Escritório</h2>
+        <nav class="nav">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#areas">Áreas de atuação</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-    <nav>
-<nav>
-    <a href="#inicio">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#areas">Áreas de atuação</a>
-    
-    </nav>
+        <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu">
+            ☰
+        </button>
+    </header>
 
-</header><section class="hero" id="inicio"></section>>
 
-    <h1>Advogada Flávia Ortíz</h1>
+    <!-- INÍCIO -->
+    <main>
 
-    <p>
-        Advocacia com ética, estratégia e compromisso.
-    </p>
+        <section class="hero" id="inicio">
 
-    <button>Entre em contato</button>
+            <div class="hero-content">
 
-</section><section class="sobre" id="sobre"></section>
+                <p class="eyebrow">FLÁVIA ORTÍZ ADVOCACIA</p>
 
-    <h2>Sobre a advogada</h2>
+                <h1>
+                    Advocacia com
+                    <em>estratégia,</em>
+                    experiência e compromisso.
+                </h1>
 
-    <div class="sobre-conteudo"><section class="areas" id="areas"></section>
+                <p class="hero-text">
+                    Atendimento jurídico personalizado, pautado pela ética,
+                    pela experiência e pela busca das melhores soluções
+                    para cada caso.
+                </p>
 
-    <h2>Áreas de atuação</h2>
+                <a href="#areas" class="button">
+                    Conheça nossas áreas
+                </a>
 
-    <div class="cards">
+            </div>
 
-        <div class="card">
-            <h3>Direito Civil</h3>
-            <p>
-                Soluções jurídicas para questões do dia a dia.
-            </p>
+        </section>
+
+
+        <!-- SOBRE -->
+        <section class="sobre" id="sobre">
+
+            <div class="sobre-imagem">
+                <div class="imagem-detalhe"></div>
+            </div>
+
+            <div class="sobre-conteudo">
+
+                <p class="eyebrow">SOBRE</p>
+
+                <h2>
+                    Experiência que transforma
+                    <em>desafios em soluções.</em>
+                </h2>
+
+                <p>
+                    A atuação jurídica é construída com responsabilidade,
+                    estratégia e atenção individual a cada cliente.
+                </p>
+
+                <p>
+                    O compromisso é compreender cada situação em sua
+                    particularidade e buscar uma solução jurídica segura,
+                    eficiente e adequada às necessidades de cada caso.
+                </p>
+
+                <a href="#contato" class="link-button">
+                    Entre em contato →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÁREAS -->
+        <section class="areas" id="areas">
+
+            <div class="section-title">
+
+                <p class="eyebrow">ATUAÇÃO</p>
+
+                <h2>
+                    Áreas de atuação
+                </h2>
+
+                <p>
+                    Soluções jurídicas pensadas para cada necessidade.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <a href="#civil" class="card">
+
+                    <span class="card-number">01</span>
+
+                    <h3>Direito Civil</h3>
+
+                    <p>
+                        Atuação em questões contratuais, obrigações,
+                        indenizações e demais relações civis.
+                    </p>
+
+                    <span class="card-link">
+                        Saiba mais →
+                    </span>
+
+                </a>
+
+
+                <a href="#familia" class="card">
+
+                    <span class="card-number">02</span>
+
+                    <h3>Direito de Família</h3>
+
+                    <p>
+                        Atendimento cuidadoso em questões familiares,
+                        sempre com atenção às particularidades de cada caso.
+                    </p>
+
+                    <span class="card-link">
+                        Saiba mais →
+                    </span>
+
+                </a>
+
+
+                <a href="#trabalhista" class="card">
+
+                    <span class="card-number">03</span>
+
+                    <h3>Direito Trabalhista</h3>
+
+                    <p>
+                        Orientação e atuação em questões relacionadas
+                        às relações de trabalho.
+                    </p>
+
+                    <span class="card-link">
+                        Saiba mais →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- DETALHES DAS ÁREAS -->
+        <section class="detalhes">
+
+            <article id="civil" class="detalhe">
+                <span>01</span>
+                <div>
+                    <h3>Direito Civil</h3>
+                    <p>
+                        Soluções jurídicas para relações civis,
+                        contratos, obrigações, responsabilidade civil
+                        e demais questões patrimoniais e pessoais.
+                    </p>
+                </div>
+            </article>
+
+
+            <article id="familia" class="detalhe">
+                <span>02</span>
+                <div>
+                    <h3>Direito de Família</h3>
+                    <p>
+                        Atuação em questões familiares com atendimento
+                        individualizado e cuidadoso.
+                    </p>
+                </div>
+            </article>
+
+
+            <article id="trabalhista" class="detalhe">
+                <span>03</span>
+                <div>
+                    <h3>Direito Trabalhista</h3>
+                    <p>
+                        Orientação e representação em demandas relacionadas
+                        às relações de trabalho.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- CONTATO -->
+        <section class="contato" id="contato">
+
+            <div>
+
+                <p class="eyebrow">CONTATO</p>
+
+                <h2>
+                    Vamos conversar sobre
+                    <em>seu caso?</em>
+                </h2>
+
+                <p>
+                    Entre em contato para saber como podemos ajudar.
+                </p>
+
+            </div>
+
+            <a href="mailto:contato@flaviaortizadvocacia.com.br" class="button button-light">
+                Entre em contato
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-logo">
+            Flávia Ortíz
+            <span>ADVOCACIA</span>
         </div>
 
-        <div class="card">
-            <h3>Direito de Família</h3>
-            <p>
-                Atendimento cuidadoso para questões familiares.
-            </p>
-        </div>
+        <p>
+            Advocacia com ética, estratégia e compromisso.
+        </p>
 
-        <div class="card">
-            <h3>Direito Trabalhista</h3>
-            <p>
-                Orientação em questões relacionadas ao trabalho.
-            </p>
-        </div>
+        <p class="copyright">
+            © 2026 Flávia Ortíz Advocacia. Todos os direitos reservados.
+        </p>
 
-    </div>
+    </footer>
 
-</section>
 
-        <div>
-            <h3>Nome da sua mãe</h3>
-
-            <p>
-                Advogada dedicada a oferecer atendimento
-                personalizado, ético e responsável aos seus clientes.
-            </p>
-
-            <p>
-                Aqui você pode colocar informações sobre
-                formação, experiência e atuação profissional.
-            </p>
-        </div>
-
-    </div>
-
-</section><footer>
-
-    <h3>Advogada Flávia Ortíz</h3>
-
-    <p>Advocacia com ética, estratégia e compromisso.</p>
-
-    <p>© 2026 .Advogada Flávia Ortíz Todos os direitos reservados.</p>
-
-</footer><h1>Advogada Flávia Ortíz</h1>
-
-    <p>Advocacia com ética, estratégia e compromisso.</p>
-
-    <button>Entre em contato</button>
+    <script src="script.js"></script>
 
 </body>
-
 </html>
