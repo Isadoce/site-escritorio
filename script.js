@@ -1,25 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f2ed;
-    text-align: center;
-    padding: 80px;
-}
+// ========================================
+// MENU MOBILE
+// ========================================
 
-h1 {
-    color: #4b1f2f;
-    font-size: 40px;
-}
+const menuMobile = document.getElementById("menuMobile");
+const nav = document.querySelector(".nav");
 
-p {
-    color: #333333;
-    font-size: 18px;
-}
+menuMobile.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
 
-button {
-    background-color: #4b1f2f;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-size: 16px;
-}
+
+// ========================================
+// FECHAR MENU AO CLICAR EM UM LINK
+// ========================================
+
+const navLinks = document.querySelectorAll(".nav a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
+
+
+// ========================================
+// ANIMAÇÃO SUAVE AO ENTRAR NAS SEÇÕES
+// ========================================
+
+const elementos = document.querySelectorAll(
+    ".sobre-conteudo, .card, .detalhe, .contato"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("aparecer");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+elementos.forEach(elemento => {
+    observer.observe(elemento);
+});
