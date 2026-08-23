@@ -1,53 +1,99 @@
-// ========================================
-// MENU MOBILE
-// ========================================
+/* =====================================================
+   FLÁVIA ORTÍZ ADVOCACIA
+   JAVASCRIPT
+   ===================================================== */
+
+
+/* ================= MENU MOBILE ================= */
 
 const menuMobile = document.getElementById("menuMobile");
-const nav = document.querySelector(".nav");
+const menu = document.getElementById("menu");
 
-menuMobile.addEventListener("click", () => {
-    nav.classList.toggle("active");
+menuMobile.addEventListener("click", function () {
+
+    menu.classList.toggle("aberto");
+
 });
 
 
-// ========================================
-// FECHAR MENU AO CLICAR EM UM LINK
-// ========================================
+/* ================= FECHAR MENU ================= */
 
-const navLinks = document.querySelectorAll(".nav a");
+const linksMenu = document.querySelectorAll("#menu a");
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
+linksMenu.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        menu.classList.remove("aberto");
+
     });
+
 });
 
 
-// ========================================
-// ANIMAÇÃO SUAVE AO ENTRAR NAS SEÇÕES
-// ========================================
+/* ================= DESTAQUE DO MENU ================= */
 
-const elementos = document.querySelectorAll(
-    ".sobre-conteudo, .card, .detalhe, .contato"
-);
+const secoes = document.querySelectorAll("section[id]");
 
-const observer = new IntersectionObserver(
-    (entries) => {
+const links = document.querySelectorAll("#menu a");
 
-        entries.forEach(entry => {
+window.addEventListener("scroll", function () {
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("aparecer");
-            }
+    let posicaoAtual = window.scrollY + 150;
 
-        });
+    secoes.forEach(function (secao) {
 
-    },
-    {
-        threshold: 0.15
-    }
-);
+        const inicio = secao.offsetTop;
+        const fim = inicio + secao.offsetHeight;
 
-elementos.forEach(elemento => {
-    observer.observe(elemento);
+        if (
+            posicaoAtual >= inicio &&
+            posicaoAtual < fim
+        ) {
+
+            links.forEach(function (link) {
+
+                link.classList.remove("ativo");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + secao.id
+                ) {
+
+                    link.classList.add("ativo");
+
+                }
+
+            });
+
+        }
+
+    });
+
+});
+
+
+/* ================= ROLAGEM SUAVE ================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        const destino = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (destino) {
+
+            event.preventDefault();
+
+            destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
 });
