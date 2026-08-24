@@ -1017,7 +1017,33 @@ a {
    RESPONSIVO
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 900px) {    .about-lawyer-image {
+        min-height: 480px;
+    }
+
+    .about-lawyer-image::before {
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+    }
+
+    .photo-placeholder {
+        width: 70%;
+        height: 390px;
+    }
+
+    .photo-placeholder span {
+        font-size: 80px;
+    }
+
+    .about-lawyer-content {
+        padding: 75px 7%;
+    }
+
+    .about-lawyer-content h2 {
+        font-size: 58px;
+    }
 
     .header-inner {
         height: 80px;
