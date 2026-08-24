@@ -461,7 +461,168 @@ a {
     color: var(--gold);
     font-size: 16px;
 }
+/* =========================
+   SOBRE A ADVOGADA
+========================= */
 
+.about-lawyer {
+    display: grid;
+
+    grid-template-columns: 48% 52%;
+
+    min-height: 750px;
+
+    background: var(--cream);
+}
+
+
+/* FOTO */
+
+.about-lawyer-image {
+    position: relative;
+
+    min-height: 700px;
+
+    background: var(--blue-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.about-lawyer-image::before {
+    content: "";
+
+    position: absolute;
+
+    top: 55px;
+    left: 55px;
+    right: 55px;
+    bottom: 55px;
+
+    border: 1px solid rgba(199,162,91,.6);
+
+    pointer-events: none;
+}
+
+
+/* ESPAÇO DA FOTO */
+
+.photo-placeholder {
+    position: relative;
+    z-index: 1;
+
+    width: 65%;
+    max-width: 430px;
+    height: 560px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            rgba(0,0,0,.12)
+        );
+
+    text-align: center;
+}
+
+.photo-placeholder span {
+    color: var(--gold-light);
+
+    font-family: var(--serif);
+
+    font-size: 110px;
+
+    line-height: 1;
+}
+
+.photo-placeholder small {
+    margin-top: 20px;
+
+    color: rgba(255,255,255,.45);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* TEXTO */
+
+.about-lawyer-content {
+    align-self: center;
+
+    padding: 100px 12% 100px 10%;
+}
+
+.about-lawyer-content h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(60px, 6vw, 90px);
+
+    font-weight: 400;
+
+    line-height: .82;
+}
+
+.about-lawyer-content h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-weight: 400;
+}
+
+.about-lawyer-content > p:not(.eyebrow) {
+    max-width: 500px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+}
+
+
+/* ASSINATURA */
+
+.about-lawyer-signature {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.about-lawyer-signature span {
+    color: var(--blue-dark);
+
+    font-family: var(--serif);
+
+    font-size: 32px;
+
+    font-style: italic;
+}
+
+.about-lawyer-signature small {
+    color: var(--gold);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
 
 /* =========================
    ÁREAS DE ATUAÇÃO
