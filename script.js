@@ -1,48 +1,80 @@
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+
+
 // ================================
 // MENU MOBILE
 // ================================
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+if (menuToggle && siteNav) {
 
-menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
+    menuToggle.addEventListener("click", () => {
 
+        const isOpen = siteNav.classList.toggle("active");
 
-// ================================
-// FECHAR MENU AO CLICAR
-// ================================
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
 
-document.querySelectorAll(".nav a").forEach(link => {
-
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
     });
 
-});
+
+    document.querySelectorAll(".site-nav a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            siteNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+}
 
 
 // ================================
-// HEADER AO ROLAR
+// MENU TRANSPARENTE → FUNDO AZUL
+// AO ROLAR A PÁGINA
 // ================================
 
-const header = document.querySelector(".header");
+const header = document.querySelector(".site-header");
 
-window.addEventListener("scroll", () => {
+if (header) {
 
-    if (window.scrollY > 50) {
-        header.style.background = "rgba(2, 31, 54, 0.98)";
-    } else {
-        header.style.background = "rgba(3, 41, 71, 0.97)";
-    }
+    window.addEventListener("scroll", () => {
 
-});
+        if (window.scrollY > 60) {
+
+            header.style.position = "fixed";
+            header.style.background = "rgba(2, 31, 54, 0.97)";
+            header.style.backdropFilter = "blur(8px)";
+
+        } else {
+
+            header.style.position = "absolute";
+            header.style.background = "transparent";
+            header.style.backdropFilter = "none";
+
+        }
+
+    });
+
+}
 
 
 // ================================
-// ANIMAÇÃO DOS ELEMENTOS
+// ANIMAÇÃO AO ENTRAR NA TELA
 // ================================
+
+const animatedElements = document.querySelectorAll(
+    ".practice-item, .value, .intro-image, .intro-right, .statement-content, .contact-copy"
+);
 
 const observer = new IntersectionObserver(
     entries => {
@@ -50,24 +82,26 @@ const observer = new IntersectionObserver(
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
             }
 
         });
 
     },
     {
-        threshold: 0.15
+        threshold: 0.12
     }
 );
 
 
-document
-    .querySelectorAll(".area-card, .differential, .about-text, .contact-text")
-    .forEach(element => {
+animatedElements.forEach(element => {
 
-        element.classList.add("fade-in");
+    element.classList.add("animate");
 
-        observer.observe(element);
+    observer.observe(element);
 
-    });
+});
