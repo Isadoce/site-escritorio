@@ -58,7 +58,7 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
+    background: cream;
 }
 
 .header-inner {
@@ -119,7 +119,7 @@ a {
 
     background: var(--gold);
 
-    transition: width .3s ease;
+    transition: width .5s ease;
 }
 
 .site-nav a:hover::after {
